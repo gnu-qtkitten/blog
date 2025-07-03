@@ -3,7 +3,7 @@
 <html lang="cn">
 <head>
     <meta charset="utf-8" />
-    <title>无垠喵の小窝</title>
+    <title>OC设定 | 无垠喵の小窝</title>
     <meta name="author" content="通过GPG加密的无垠喵" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -47,7 +47,9 @@
 
 
 
-<script src="/blog/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/blog/css/main.css" />
 
@@ -157,40 +159,11 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/blog/images/background.jpg"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>无垠喵の小窝</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
+            <div class="article">
+    <div>
+        <h1>OC设定</h1>
     </div>
-</div>
-<div
-    id="home-posts-wrap"
-    ref="homePostsWrap"
-    true
->
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/blog/2025/07/03/Something-About-CM-s-G-Modem-HX5-9sLite/">
-        <h2 class="post-title">[折腾记]记一次折腾记录——移动牌光猫获取超级密码以及改桥接教程</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -200,53 +173,9 @@
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h2 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a>免责声明</h2><p>这两天手欠，看家里的移动光猫不爽，所以想要改桥接，以下是仅我自己折腾的过程，折腾有风险，需要一定的计算机知识，有问题评论见，若稚问题概不回答<br>我的教程亲测可以用于H3-8s和HX5-9sLite，其它型号应该也行，折腾有风险，操作需谨慎（部分图片来自网络）</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>首先，我们先登录光猫的管理页面<br><img src="/blog/res/a7862cae09ede5174c40d4c14df39767651012210.jpg@1192w.avif" alt="登录光猫的管理页面"><br>然后输入以下网址 http:&#x2F;&#x2F;[光猫IP]&#x2F;usr&#x3D;CMCCAdmin&amp;psw&#x3D;aDm8H%25MdA&amp;cmd&#x3D;1&amp;telnet.gch<br>此时，你会看到大大的TelnetSet Success，那么你成功开启了telnet<br>我们在找一个telnet客户端，android设备装termux或者电脑都可以，然后输入</p>
-<pre><code class="language-shell">telnet 192.168.1.1
-</code></pre>
-<p>用户名CMCCAdmin密码aDm8H%MdA<br>成功后会有一个shell的提示符<br>然后，坑就来了。直接看的话是星号，如果按照网上改密码的方法，你就在也别想登陆了，所以我们把它拷出来在读取</p>
-<pre><code class="language-shell">sidbg 1 DB p DevAuthInfo 
-sidbg 1 DB decry /userconfig/cfg/db_user_cfg.xml 
-cd /tmp 
-vi debug-decry-cfg 
-</code></pre>
-<pre><code class="language-vim">:/DevAuthInfo
-</code></pre>
-<p>然后我们就可以轻松获取密码<br>然后拿着这个用户名密码在去登录web控制台，你会发现这里发生了些许微妙的变化<br><img src="/blog/res/2ac0bf0dcde34f8f27bd07370f710b4b651012210.jpg@1192w.avif" alt="web控制台"><br>按照图上的顺序进行修改2处先调到有internet字样的选项，记录3处所有配置然后把2处改为新建WAN连接，5处改为Bridge桥模式，将3处修改的和原来一样，将路由器连接的端口勾上，最后不要忘了保存<br>然后手机打开移动应用，查看宽带账号，修改密码（直接忘记密码用短信验证码重置就行）<br><img src="/blog/res/7fada143ff6450382ebca8cc950777f6651012210.jpg@1192w.avif" alt="移动应用"><br>再登录路由器，此时无法上网<br><img src="/blog/res/e0246db75fba89d2df4cb09df6d53bdc651012210.jpg@1192w.avif" alt="路由器"><br>把上网模式改为拨号上网（PPPoE）然后输入移动app中宽带账号和密码，最后保存<br>此时路由器会开始拨号，稍后就可以上网了~</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/blog/2025/07/03/Something-About-CM-s-G-Modem-HX5-9sLite/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/blog/2025/07/03/Original-Characters-Settings/">
-        <h2 class="post-title">OC设定</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/7/3
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>再22世纪中叶，地球上的生物无法忍受人类的剥削与压迫，发动了大革命，并再革命胜利后建立了联合政府，并在发展的路上一路狂飙，再23世纪中叶宣布成为一等星文明，并与临近的几个友好文明取得联系，建立了共产星际。<br>两个世纪后，太阳社会主义联邦共和国建立，这一年被定名为“星历元年”。再星历22000年共和国成功发展为三等星文明，并号称为“银河帝国”<br>成为一等星文明时，上天并不容易，所以让军队出去探索再适合不过了。这一理念一直流传至今，所以星联所有的官方舰船都是军事化管理，就算是商船也是半军事化的</p>
+    
+    <div class="content" v-pre>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>再22世纪中叶，地球上的生物无法忍受人类的剥削与压迫，发动了大革命，并再革命胜利后建立了联合政府，并在发展的路上一路狂飙，再23世纪中叶宣布成为一等星文明，并与临近的几个友好文明取得联系，建立了共产星际。<br>两个世纪后，太阳社会主义联邦共和国建立，这一年被定名为“星历元年”。再星历22000年共和国成功发展为三等星文明，并号称为“银河帝国”<br>成为一等星文明时，上天并不容易，所以让军队出去探索再适合不过了。这一理念一直流传至今，所以星联所有的官方舰船都是军事化管理，就算是商船也是半军事化的</p>
 <pre>星历=公元+2*10^4</pre>
 <h1 id="设定"><a href="#设定" class="headerlink" title="设定"></a>设定</h1><h2 id="意识波"><a href="#意识波" class="headerlink" title="意识波"></a>意识波</h2><p>在星联科学家的研究下，发现意识是一种特殊的存在方式，他们发现这种东西的存在似乎更接近于一种波，所以被命名为“意识波”，事实证明意识并非一种波，但人们对它仍然知之甚少，只知道强大的理化环境可以修改它</p>
 <h2 id="人与人体"><a href="#人与人体" class="headerlink" title="人与人体"></a>人与人体</h2><p>随着星联发展，有越来越多的生物加入了星联。但他们的身体差距实在太大，所以星联不得不重新考虑人的定义<br>时至今日，星联对人的定义是独立（相对其它意识体）的意识体。而意识体的载体就是人体，所以数字生命体和人工智能也是人，而脑死亡的植物人甚至不是人体！<br>人体的贩卖不犯法，但是不能贩卖带有任何意识体的人体或单独的意识体</p>
@@ -299,114 +228,13 @@ vi debug-decry-cfg
 <h2 id="穿甲铳"><a href="#穿甲铳" class="headerlink" title="穿甲铳"></a>穿甲铳</h2><p>除了船员服其它都打的穿的手铳</p>
 <h2 id="宇宙合金"><a href="#宇宙合金" class="headerlink" title="宇宙合金"></a>宇宙合金</h2><p>加入了奇奇怪怪星联的秘密狠活的合金，具有极高的强度和挠性，但是也很重（主体是铂铱合金）</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/blog/2025/07/03/Original-Characters-Settings/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
-    
-    <span class="current">1</span>
-    
-    
-    
-    
-</div>
-
     </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/blog/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">通过GPG加密的无垠喵</div>
-        <div class="description">
-            <p>. . .</p>
-
-        </div>
-        
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a href="https://pages.9cats.dpdns.org/">
-                    <i
-                        class="fa-solid fa-book fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/gnu-qtkitten">
-                    <i
-                        class="fa-brands fa-github fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a href="mailto:a3045132338@outlook.com">
-                    <i
-                        class="fa-regular fa-envelope fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://gitea.com/gqkitten">
-                    <i
-                        class="fa-brands fa-github fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://invent.kde.org/alittlekitten">
-                    <i
-                        class="fa-brands fa-gitlab fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://space.bilibili.com/651012210">
-                    <i
-                        class="fa-brands fa-bilibili fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a href="/blog/../unlock-music">音乐解锁</a>
-            </div>
-            
-            <div class="friend-link">
-                <a href="/blog/../Isotopic256">元素2048</a>
-            </div>
-            
-            <div class="friend-link">
-                <a href="/blog/../noteDigger">手动扒谱</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
+    
+    
+    
+    
+    
     
 </div>
 
@@ -438,6 +266,12 @@ vi debug-decry-cfg
         
     </div>
     <script src="/blog/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
